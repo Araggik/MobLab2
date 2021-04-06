@@ -25,7 +25,7 @@ class MarkerActivity : AppCompatActivity(){
     var path:String?=""
     var pos:String?=""
     private lateinit var dao: PDao
-    var count: Int=0
+    var count:Int=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +41,7 @@ class MarkerActivity : AppCompatActivity(){
 
         dao = db.pDao()
         val photos  = dao.loadAllByPointPh(pos!!)
-        count = photos.size
+        count = dao.getAllPh().size
         val recyclerView = findViewById<View>(R.id.recyclerView) as RecyclerView
         val adapter = CustomAdapter(photos)
         recyclerView.adapter = adapter

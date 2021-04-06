@@ -24,6 +24,9 @@ interface PDao {
     @Query("SELECT * FROM point")
     fun getAllP(): List<Point>
 
+    @Query("SELECT * FROM photo")
+    fun getAllPh(): List<Photo>
+
     @Query("SELECT * FROM photo WHERE point = :pos")
     fun loadAllByPointPh(pos: String): List<Photo>
 
